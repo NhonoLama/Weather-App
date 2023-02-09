@@ -8,7 +8,30 @@
     <title>Weather Check</title>
 </head>
 <body>
-    <script src="scripts/app.js"></script>
+    <div class="container my-5 mx-auto">
+        <h1 class="text-muted text-center my-4">Weather Check</h1>
+        <form class="location text-muted text-center my-4">
+            <label for="city">Enter the location (CITY)</label>
+            <input type="text" name="city" class="form-control p-2 m-2"/>
+        </form>
+
+        <div class="card shadow-lg rounded">
+            <img src="https://via.placeholder.com/400x300" alt="weather" class="time card-img-top">
+            <div class="icon bg-light mx-auto text-center">
+
+            </div>
+            <div class="details text-muted text-uppercase text-center">
+                <h5 class="my-3">City name</h5>
+                <div class="my-3">Weather Conditions</div>
+                <div class="display-4 my-4">
+                    <span>temp</span>
+                    <span>&deg;C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="scripts/forcast.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -7,3 +7,8 @@ body{
     max-width: 400px;
     background-color: #E8E2E2;
 }
+
+.icon{
+    position: relative;
+    top: -50px;
+}

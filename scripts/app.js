@@ -2,7 +2,8 @@ const form = document.querySelector('form');
 const details = document.querySelector('.details');
 const card = document.querySelector('.card');
 const icon = document.querySelector('.icon img');
-const img = document.querySelector('img .time');
+const img = document.querySelector('img.time');
+const forcast = new Forecast();
 
 const updateUI = async (data) => {
     //const cityDetails = data.cityDetails;
@@ -25,21 +26,13 @@ const updateUI = async (data) => {
     img.setAttribute('src' , dayTime);
 
     //placing the weather icon 
-    const w_icon = 'img/icons/${weather.WeatherIcon}.svg';
-    icon.setAttribute('src' , w_icon);
+    const weatherIcon = `img/icons/${weather.WeatherIcon}.svg`;
+    icon.setAttribute('src' , weatherIcon);
 
     // hiding and showing the card after inputing the city name
     if(card.classList.contains('d-none')){
       card.classList.remove('d-none');
     }
-}
-
-const updateCity = async (city) => {
-
-    const cityDetails = await getCity(city);
-    const weather = await getWeather(cityDetails.Key);
-
-    return { cityDetails , weather};    //object shorthand notation  i.e. { cityDetails : cityDetails , weather : weather }
 }
 
 form.addEventListener('submit', e => {
@@ -48,7 +41,7 @@ form.addEventListener('submit', e => {
   const city = form.city.value.trim();
   form.reset();
   
-  updateCity(city)
+  forcast.updateCity(city)
   .then(data => updateUI(data))
   .catch(err => {console.log(err)})
 
@@ -57,7 +50,7 @@ form.addEventListener('submit', e => {
 })
 
 if(localStorage.getItem('city')){
-  updateCity(localStorage.getItem('city'))
+  forcast.updateCity(localStorage.getItem('city'))
    .then(data => updateUI(data))
    .catch(err => console.log(err))
 }

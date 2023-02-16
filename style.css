@@ -1,14 +1,24 @@
 body{
-    background-color: #eeedec;
-    font-size: 0.8rem;
+    background-color:#F7FBFC ;
+    font-size: 0.9rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container{
     max-width: 400px;
-    background-color: #E8E2E2;
+    background-color: #D6E6F2;
+    border-style: inset;
+    border-radius: 25px;
+    border-width: 10px;
+    border-color: #D6E6F2;
+}
+
+.card {
+    background-color: #CBF1F5;
 }
 
 .icon{
     position: relative;
     top: -50px;
+    border-radius: 50%;
 }
